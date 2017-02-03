@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Math Tournament 2017</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="title flex-column flex-center">
+			<h3>GSW High School Mathematics Tournament 2017</h3>
+			<h5 class="hidden-print">
+				Tournament results are groupped by hierarchy level and are available under specific tabs below.
+			</h5>
+		</div>
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs hidden-print" role="tablist">
+			<li role="presentation"><a href="#tournament" aria-controls="tournament" role="tab" data-toggle="tab">Tournament</a></li>
+			<li role="presentation"><a href="#division" aria-controls="division" role="tab" data-toggle="tab">Division</a></li>
+			<li role="presentation" class="active"><a href="#school" aria-controls="school" role="tab" data-toggle="tab">School</a></li>
+			<li role="presentation"><a href="#student" aria-controls="student" role="tab" data-toggle="tab">Student</a></li>
+		</ul>
+		<!-- Tab panes -->
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane" id="tournament">
+
+			</div>
+			<div role="tabpanel" class="tab-pane" id="division">
+
+			</div>
+			<div role="tabpanel" class="tab-pane active" id="school">
+				<div class="row selector-container hidden-print">
+					<label class="col-xs-4">
+						Division
+						<select id="school-division" class="form-control">
+						</select>
+					</label>
+					<label class="col-xs-6">
+						School
+						<select id="school-school" class="form-control">
+						</select>
+					</label>
+					<div class="col-xs-2">
+						<label>
+							<span>&nbsp;</span>
+							<button type="button" class="btn btn-default form-control print">
+								<span class="glyphicon glyphicon-print"></span>
+							</button>
+						</label>
+					</div>
+				</div>
+				<hr>
+				<div class="results-container">
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="student">
+
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="data.js" type="text/javascript"></script>
+	<script src="process.js" type="text/javascript"></script>
+</body>
+
+</html>
