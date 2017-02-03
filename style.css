@@ -25,10 +25,8 @@ hr {
 	padding-bottom: 0;
 }
 #school .school-info,
-#division .division-info, {
+#division .division-info {
 	padding: 25px;
-}
-#school .school-info h3 {
 	margin: 0;
 }
 #school table {
