@@ -268,6 +268,138 @@ function evalAnswers() {
 	return results;
 }
 /*
+	Compile Division report
+*/
+function divisionReport(allData, divisionObj, container) {
+	container
+	.empty()
+	.append(
+		$('<div>')
+		.append(
+			$('<div>')
+			.addClass('division-info flex-column flex-center')
+			.append(
+				$('<h3>')
+				.text('\'' + divisionObj.division + '\' division')
+			)
+		)
+		.append(
+			$('<fieldset>')
+			.append(
+				$('<legend>')
+				.text('Schools ranking')
+			)
+			.append(
+				$('<table>')
+				.addClass('table schools-ranking')
+				.append(
+					$('<thead>')
+					.append(
+						$('<tr>')
+						.append(
+							$('<th>')
+							.text('Rank')
+						)
+						.append(
+							$('<th>')
+							.text('School name')
+						)
+						.append(
+							$('<th>')
+						)
+						.append(
+							$('<th>')
+							.text('Top4 score')
+						)
+					)
+				)
+				.append(
+					$('<tbody>')
+				)
+			)
+		)
+		.append(
+			$('<fieldset>')
+			.append(
+				$('<legend>')
+				.text('Students ranking (avg: ' + divisionObj.stats.students.average.toFixed(2) + ', std: ' + divisionObj.stats.students.deviation.toFixed(2) + ')')
+			)
+			.append(
+				$('<table>')
+				.addClass('table students-ranking')
+				.append(
+					$('<thead>')
+					.append(
+						$('<tr>')
+						.append(
+							$('<th>')
+							.text('Rank')
+						)
+						.append(
+							$('<th>')
+							.text('Student name')
+						)
+						.append(
+							$('<th>')
+							.text('School name')
+						)
+						.append(
+							$('<th>')
+							.text('Score')
+						)
+					)
+				)
+				.append(
+					$('<tbody>')
+				)
+			)
+		)
+	);
+	for(let schoolIndex=0; schoolIndex<divisionObj.stats.schools.ranking.length; schoolIndex++) {
+		let school = divisionObj.stats.schools.ranking[schoolIndex];
+		$('#division table.schools-ranking tbody')
+		.append(
+			$('<tr>')
+			.append(
+				$('<th>')
+				.text(schoolIndex + 1)
+			)
+			.append(
+				$('<td>')
+				.attr('colspan','2')
+				.text(school.name)
+			)
+			.append(
+				$('<td>')
+				.text(school.top4total)
+			)
+		);
+	}
+	for(let studentIndex=0; studentIndex<divisionObj.stats.students.ranking.length; studentIndex++) {
+		let student = divisionObj.stats.students.ranking[studentIndex];
+		$('#division table.students-ranking tbody')
+		.append(
+			$('<tr>')
+			.append(
+				$('<th>')
+				.text(studentIndex + 1)
+			)
+			.append(
+				$('<td>')
+				.text(student.name)
+			)
+			.append(
+				$('<td>')
+				.text(student.school)
+			)
+			.append(
+				$('<td>')
+				.text(student.score)
+			)
+		);
+	}
+}
+/*
 	Compile school report
 */
 function schoolReport(allData, schoolObj, container) {
@@ -483,8 +615,33 @@ $(document).ready(function() {
 	});
 	var evaluatedData = evalAnswers();
 	console.log(evaluatedData);
-	//-- School tab
+	//-- Commons
+	$('button.print').click(function(){
+		window.print();
+	});
 	let divisions = Object.keys(evaluatedData.divisions).sort();
+	//-- Division tab
+	divisions.forEach(function(division){
+		$('#division-division')
+		.append(
+			$('<option>')
+			.attr({
+				'value': division
+			})
+			.text(division)
+		);
+	});
+	$('#division-division')
+	.change(function(){
+		let division = $('#division-division').find('option:selected').val();
+		let divisionObj = evaluatedData.divisions[division];
+		divisionReport(evaluatedData, divisionObj, $('#division .results-container'));
+	})
+	.find('option:eq(0)')
+	.attr('selected','')
+	.end()
+	.trigger('change');
+	//-- School tab
 	divisions.forEach(function(division){
 		$('#school-division')
 		.append(
@@ -526,7 +683,4 @@ $(document).ready(function() {
 	.attr('selected','')
 	.end()
 	.trigger('change');
-	$('#school button.print').click(function(){
-		window.print();
-	});
 });
