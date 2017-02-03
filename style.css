@@ -34,15 +34,15 @@ h3, h4, legend {
 	margin-left: 25px;
 }
 #school table thead tr th {
-	width: 13%;
+	width: 11%;
 }
 #school table thead tr th:first-child {
-	width: 22%;
+	width: 23%;
 }
 @media print {
 	body,
 	body > .container {
-		width: 800px;
+		width: 850;
 		margin: 0;
 		padding: 0;
 	}

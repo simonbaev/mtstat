@@ -285,10 +285,17 @@ function schoolReport(allData, schoolObj, container) {
 			)
 		)
 		.append(
-			$('<fieldset>')
-			.append(
-				$('<legend>')
-				.text('Top 4 score: ' + schoolObj.stats.top4total)
+			$('<p>')
+			.addClass('text-justify')
+			.html(
+				'The <strong>Score</strong> is computed using the formula <strong>4C - I + 40</strong>, where <strong>C</strong> represents the number of correct responses and <strong>I</strong> represents the number of incorrect responses. Incomplete erasures and multiple marks are scored as incorrect responses.  Blank responses do not affect the score.  The table below shows only the score and the number correct. If you desire the number incorrect and the number left blank, you will have to deduce them from the scoring formula.'
+			)
+		)
+		.append(
+			$('<p>')
+			.addClass('text-justify')
+			.html(
+				'We enjoyed having you as part of our activities today and hope that you found this to be a rewarding learning experience.  We look forward to seeing you at Georgia Southwestern at our other competitions and visitations during the year.'
 			)
 		)
 		.append(
@@ -309,6 +316,10 @@ function schoolReport(allData, schoolObj, container) {
 							$('<th>')
 							.text('')
 						)
+						.append(
+							$('<th>')
+							.text('')
+						)
 					)
 				)
 				.append(
@@ -319,6 +330,7 @@ function schoolReport(allData, schoolObj, container) {
 						.append(
 							$('<th>')
 							.text('School')
+							.attr('colspan','2')
 						)
 					)
 					.append(
@@ -327,6 +339,7 @@ function schoolReport(allData, schoolObj, container) {
 						.append(
 							$('<th>')
 							.text('Division')
+							.attr('colspan','2')
 						)
 					)
 					.append(
@@ -335,6 +348,7 @@ function schoolReport(allData, schoolObj, container) {
 						.append(
 							$('<th>')
 							.text('Tournament')
+							.attr('colspan','2')
 						)
 					)
 				)
@@ -357,11 +371,22 @@ function schoolReport(allData, schoolObj, container) {
 							$('<th>')
 							.text('Student Name')
 						)
+						.append(
+							$('<th>')
+							.text('Score')
+						)
 					)
 				)
 				.append(
 					$('<tbody>')
 				)
+			)
+		)
+		.append(
+			$('<fieldset>')
+			.append(
+				$('<legend>')
+				.text('Top 4 score: ' + schoolObj.stats.top4total)
 			)
 		)
 		.append(
@@ -423,8 +448,20 @@ function schoolReport(allData, schoolObj, container) {
 	});
 	Object.keys(schoolObj.students).sort().forEach(function(studentName){
 		let studentObj = schoolObj.students[studentName];
-		container.find('table.stats-individual tbody').append($('<tr>').append($('<td>').text(studentName)));
-		container.find('table.stats-individual thead tr th:gt(0)').each(function(index){
+		container
+		.find('table.stats-individual tbody')
+		.append(
+			$('<tr>')
+			.append(
+				$('<td>')
+				.text(studentName)
+			)
+			.append(
+				$('<td>')
+				.text(studentObj.score)
+			)
+		);
+		container.find('table.stats-individual thead tr th:gt(1)').each(function(index){
 			let th = $(this);
 			container
 			.find('table.stats-individual tbody tr')
