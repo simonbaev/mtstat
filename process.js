@@ -268,6 +268,121 @@ function evalAnswers() {
 	return results;
 }
 /*
+	Compile Tournament report
+*/
+function tournamentReport(allData, container) {
+	container
+	.empty()
+	.append(
+		$('<div>')
+		.append(
+			$('<div>')
+			.addClass('tournament-info flex-column flex-center')
+			.append(
+				$('<h3>')
+				.html('Tournamernt wide statistics')
+			)
+		)
+		.append(
+			$('<fieldset>')
+			.append(
+				$('<legend>')
+				.text('Summary')
+			)
+			.append(
+				$('<p>')
+				.html(
+					'Total number of participants was <b>' + allData.stats.numberOfStudents + '</b>. Average score was <b>' + allData.stats.individualScores.average.toFixed(2) + '</b>. Standard deviation of score destribution was <b>' + allData.stats.individualScores.deviation.toFixed(2) + '</b>.'
+				)
+			)
+		)
+		.append(
+			$('<fieldset>')
+			.append(
+				$('<legend>')
+				.text('Items analysis')
+			)
+			.append(
+				$('<table>')
+				.addClass('table items-analysis')
+				.append(
+					$('<thead>')
+					.append(
+						$('<tr>')
+						.append(
+							$('<th>')
+							.text('Question')
+						)
+						.append(
+							$('<th>')
+							.text('Blanks')
+						)
+						.append(
+							$('<th>').html('1<sup>st</sup>')
+						)
+						.append(
+							$('<th>').html('2<sup>nd</sup>')
+						)
+						.append(
+							$('<th>').html('3<sup>rd</sup>')
+						)
+						.append(
+							$('<th>').html('4<sup>th</sup>')
+						)
+						.append(
+							$('<th>').html('5<sup>th</sup>')
+						)
+						.append(
+							$('<th>').text('Category')
+						)
+						.append(
+							$('<th>').text('Percent')
+						)
+					)
+				)
+				.append(
+					$('<tbody>')
+				)
+			)
+		)
+	);
+	for(let questionIndex=0; questionIndex<allData.stats.QAs.length; questionIndex++) {
+		let question = allData.stats.QAs[questionIndex];
+		container
+		.find('table.items-analysis tbody')
+		.append(
+			$('<tr>')
+			.append(
+				$('<th>').text(questionIndex + 1)
+			)
+			.append(
+				$('<td>').text(question.counters[0])
+			)
+			.append(
+				$('<td>').text(question.counters[1]).addClass(question.answer === 1 ? 'correct-answer' : '')
+			)
+			.append(
+				$('<td>').text(question.counters[2]).addClass(question.answer === 2 ? 'correct-answer' : '')
+			)
+			.append(
+				$('<td>').text(question.counters[3]).addClass(question.answer === 3 ? 'correct-answer' : '')
+			)
+			.append(
+				$('<td>').text(question.counters[4]).addClass(question.answer === 4 ? 'correct-answer' : '')
+			)
+			.append(
+				$('<td>').text(question.counters[5]).addClass(question.answer === 5 ? 'correct-answer' : '')
+			)
+			.append(
+				$('<td>').text(question.category)
+			)
+			.append(
+				$('<td>').text(question.counters.correct.toFixed(2))
+			)
+		);
+	}
+}
+/*
 	Compile Division report
 */
 function divisionReport(allData, divisionObj, container) {
@@ -620,6 +735,8 @@ $(document).ready(function() {
 		window.print();
 	});
 	let divisions = Object.keys(evaluatedData.divisions).sort();
+	//-- Tournament report
+	tournamentReport(evaluatedData, $('#tournament .results-container'));
 	//-- Division tab
 	divisions.forEach(function(division){
 		$('#division-division')

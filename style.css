@@ -25,11 +25,14 @@ hr {
 	padding-bottom: 0;
 }
 #school .school-info,
-#division .division-info {
+#division .division-info,
+#tournament .tournament-info {
 	padding: 25px;
 	margin: 0;
 }
-#school table {
+#school table,
+#division table,
+#tournament table {
 	margin-left: 25px;
 }
 #school table thead tr th {
@@ -47,11 +50,18 @@ hr {
 #division table thead tr th:last-child {
 	width: 16%;
 }
+#tournament table.items-analysis td.correct-answer {
+	font-weight: bold;
+	color: purple;
+}
+#tournament p {
+	margin-left: 25px;
+}
 @media print {
 	body,
 	body > .container {
 		width: 900px;
-		margin: 0;
+/*		margin: 0;
 		padding: 0;
-	}
+*/	}
 }
