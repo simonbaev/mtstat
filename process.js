@@ -290,9 +290,33 @@ function tournamentReport(allData, container) {
 				.text('Summary')
 			)
 			.append(
-				$('<p>')
-				.html(
-					'Total number of participants was <b>' + allData.stats.numberOfStudents + '</b>. Average score was <b>' + allData.stats.individualScores.average.toFixed(2) + '</b>. Standard deviation of score destribution was <b>' + allData.stats.individualScores.deviation.toFixed(2) + '</b>.'
+				$('<div>')
+				.addClass('row')
+				.append(
+					$('<div>')
+					.addClass('col-xs-10')
+					.append(
+						$('<p>')
+						.html(
+							'The average of <b>' + allData.stats.numberOfStudents + '</b> scores = <b>' + allData.stats.individualScores.average.toFixed(2) + '</b>, the standard deviation = <b>' + allData.stats.individualScores.deviation.toFixed(2) + '</b>'
+						)
+					)
+				)
+				.append(
+					$('<label>')
+					.addClass('col-xs-2')
+					.append(
+						$('<button>')
+						.attr('type','button')
+						.addClass('btn btn-default pull-right hidden-print')
+						.append(
+							$('<span>')
+							.addClass('glyphicon glyphicon-print')
+						)
+						.click(function(){
+							window.print();
+						})
+					)
 				)
 			)
 		)
