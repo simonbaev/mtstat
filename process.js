@@ -52,8 +52,8 @@ function parseID(ID) {
 	Parse ID and print the parsed object as CSV string
 */
 function idToString(id) {
-	var temp = parseID(id);
-	return id + "," + temp.student + "," + temp.school;
+	var student = parseID(id);
+	return id + "," + student.name + "," + student.school;
 }
 /*
 	Parse questions to index them with respect to question number
@@ -411,7 +411,6 @@ function tournamentReport(allData, container) {
 */
 function divisionReport(allData, divisionObj, container) {
 	container
-	.empty()
 	.append(
 		$('<div>')
 		.append(
@@ -496,7 +495,7 @@ function divisionReport(allData, divisionObj, container) {
 	);
 	for(let schoolIndex=0; schoolIndex<divisionObj.stats.schools.ranking.length; schoolIndex++) {
 		let school = divisionObj.stats.schools.ranking[schoolIndex];
-		$('#division table.schools-ranking tbody')
+		container.find('table.schools-ranking:last tbody')
 		.append(
 			$('<tr>')
 			.append(
@@ -516,7 +515,7 @@ function divisionReport(allData, divisionObj, container) {
 	}
 	for(let studentIndex=0; studentIndex<divisionObj.stats.students.ranking.length; studentIndex++) {
 		let student = divisionObj.stats.students.ranking[studentIndex];
-		$('#division table.students-ranking tbody')
+		container.find('table.students-ranking:last tbody')
 		.append(
 			$('<tr>')
 			.append(
@@ -544,7 +543,6 @@ function divisionReport(allData, divisionObj, container) {
 function schoolReport(allData, schoolObj, container) {
 	//-- Markup preparation
 	container
-	.empty()
 	.append(
 		$('<div>')
 		.append(
@@ -678,16 +676,16 @@ function schoolReport(allData, schoolObj, container) {
 	let categories = Object.keys(schoolObj.stats.averages);
 	categories.sort().forEach(function(category){
 		container
-		.find('table.stats-averages thead tr.categories')
+		.find('table.stats-averages:last thead tr.categories')
 		.append(
 			$('<th>')
 			.text(category)
 		);
 	});
-	container.find('table.stats-averages thead tr.categories').append($('<th>'));
+	container.find('table.stats-averages:last thead tr.categories').append($('<th>'));
 	categories.forEach(function(category){
 		container
-		.find('table.stats-averages tbody tr.stats-averages-school')
+		.find('table.stats-averages:last tbody tr.stats-averages-school')
 		.append(
 			$('<td>')
 			.text(schoolObj.stats.averages[category].toFixed(2))
@@ -695,7 +693,7 @@ function schoolReport(allData, schoolObj, container) {
 	});
 	categories.forEach(function(category){
 		container
-		.find('table.stats-averages tbody tr.stats-averages-division')
+		.find('table.stats-averages:last tbody tr.stats-averages-division')
 		.append(
 			$('<td>')
 			.text(allData.divisions[schoolObj.division].stats.questions.averages[category].toFixed(2))
@@ -703,7 +701,7 @@ function schoolReport(allData, schoolObj, container) {
 	});
 	categories.forEach(function(category){
 		container
-		.find('table.stats-averages tbody tr.stats-averages-tournament')
+		.find('table.stats-averages:last tbody tr.stats-averages-tournament')
 		.append(
 			$('<td>')
 			.text(allData.stats.averages[category].toFixed(2))
@@ -711,7 +709,7 @@ function schoolReport(allData, schoolObj, container) {
 	});
 	Object.keys(schoolObj.students[Object.keys(schoolObj.students)[0]].counters.correct).sort().forEach(function(category){
 		container
-		.find('table.stats-individual thead tr')
+		.find('table.stats-individual:last thead tr')
 		.append(
 			$('<th>')
 			.text(category)
@@ -720,7 +718,7 @@ function schoolReport(allData, schoolObj, container) {
 	Object.keys(schoolObj.students).sort().forEach(function(studentName){
 		let studentObj = schoolObj.students[studentName];
 		container
-		.find('table.stats-individual tbody')
+		.find('table.stats-individual:last tbody')
 		.append(
 			$('<tr>')
 			.append(
@@ -732,10 +730,10 @@ function schoolReport(allData, schoolObj, container) {
 				.text(studentObj.score)
 			)
 		);
-		container.find('table.stats-individual thead tr th:gt(1)').each(function(index){
+		container.find('table.stats-individual:last thead tr th:gt(1)').each(function(index){
 			let th = $(this);
 			container
-			.find('table.stats-individual tbody tr')
+			.find('table.stats-individual:last tbody tr')
 			.last()
 			.append(
 				$('<td>')
@@ -743,6 +741,24 @@ function schoolReport(allData, schoolObj, container) {
 			);
 		});
 	});
+}
+/*
+	Compile student report
+*/
+function studentReport(allData, studentObj, container) {
+	container
+	.empty()
+	.append(
+		$('<div>')
+		.append(
+			$('<div>')
+			.addClass('student-info flex-column flex-center')
+			.append(
+				$('<h3>')
+				.text('Individual report for ' + studentObj.name)
+			)
+		)
+	);
 }
 /*
 	Document ready function
@@ -776,7 +792,7 @@ $(document).ready(function() {
 	.change(function(){
 		let division = $('#division-division').find('option:selected').val();
 		let divisionObj = evaluatedData.divisions[division];
-		divisionReport(evaluatedData, divisionObj, $('#division .results-container'));
+		divisionReport(evaluatedData, divisionObj, $('#division .results-container').empty());
 	})
 	.find('option:eq(0)')
 	.attr('selected','')
@@ -813,7 +829,7 @@ $(document).ready(function() {
 			let schoolName = $('#school-school').find('option:selected').val();
 			let division = $('#school-division').find('option:selected').val();
 			let schoolObj = evaluatedData.divisions[division].schools[schoolName];
-			schoolReport(evaluatedData, schoolObj, $('#school .results-container'));
+			schoolReport(evaluatedData, schoolObj, $('#school .results-container').empty());
 		})
 		.find('option:eq(0)')
 		.attr('selected','')
@@ -824,4 +840,94 @@ $(document).ready(function() {
 	.attr('selected','')
 	.end()
 	.trigger('change');
+	//-- Student tab
+	divisions.forEach(function(division){
+		$('#student-division')
+		.append(
+			$('<option>')
+			.attr({
+				'value': division
+			})
+			.text(division)
+		);
+	});
+	$('#student-division')
+	.change(function(){
+		let division = $('#student-division').find('option:selected').val();
+		let schools = Object.keys(evaluatedData.divisions[division].schools).sort();
+		$('#student-school').empty();
+		schools.forEach(function(school){
+			$('#student-school')
+			.append(
+				$('<option>')
+				.attr({
+					'value': school
+				})
+				.text(school)
+			);
+		});
+		$('#student-school')
+		.change(function(){
+			let division = $('#student-division').find('option:selected').val();
+			let school = $('#student-school').find('option:selected').val();
+			let students = Object.keys(evaluatedData.divisions[division].schools[school].students).sort();
+			$('#student-student').empty();
+			students.forEach(function(student){
+				$('#student-student')
+				.append(
+					$('<option>')
+					.attr({
+						'value': student
+					})
+					.text(student)
+				);
+			});
+			$('#student-student')
+			.change(function(){
+				let division = $('#student-division').find('option:selected').val();
+				let school = $('#student-school').find('option:selected').val();
+				let student = $('#student-student').find('option:selected').val();
+				let studentObj = evaluatedData.divisions[division].schools[school].students[student];
+				studentReport(evaluatedData, studentObj, $('#student .results-container'));
+			})
+			.find('option:eq(0)')
+			.attr('selected','')
+			.end()
+			.trigger('change');
+		})
+		.find('option:eq(0)')
+		.attr('selected','')
+		.end()
+		.trigger('change');
+	})
+	.find('option:eq(0)')
+	.attr('selected','')
+	.end()
+	.trigger('change');
+	//-- Bulk print
+	$('#bulk .print-schools').click(function(){
+		$('#bulk .visible-print-block').empty();
+		for(let division of Object.keys(evaluatedData.divisions).sort()) {
+			for(let school of Object.keys(evaluatedData.divisions[division].schools).sort()) {
+				let schoolObj = evaluatedData.divisions[division].schools[school];
+				schoolReport(evaluatedData, schoolObj, $('#bulk .bulk-schools'));
+			}
+		}
+		window.print();
+	});
+	$('#bulk .print-divisions').click(function(){
+		$('#bulk .visible-print-block').empty();
+		for(let division of Object.keys(evaluatedData.divisions).sort()) {
+			let divisionObj = evaluatedData.divisions[division];
+			divisionReport(evaluatedData, divisionObj, $('#bulk .bulk-divisions'));
+		}
+		window.print();
+	});
+	$('#bulk .save-labels').click(function(){
+		$(this)
+		.attr({
+			'href': 'data:application/csv;charset=UTF-8,' + encodeURIComponent(labels.join('\n')),
+			'download': 'labels.csv'
+		});
+	});
 });
