@@ -18,15 +18,14 @@
 		</div>
 		<!-- Nav tabs -->
 		<ul class="nav nav-tabs hidden-print" role="tablist">
-			<li role="presentation" class=""><a href="#tournament" aria-controls="tournament" role="tab" data-toggle="tab">Tournament</a></li>
+			<li role="presentation" class="active"><a href="#tournament" aria-controls="tournament" role="tab" data-toggle="tab">Tournament</a></li>
 			<li role="presentation" class=""><a href="#division" aria-controls="division" role="tab" data-toggle="tab">Division</a></li>
 			<li role="presentation" class=""><a href="#school" aria-controls="school" role="tab" data-toggle="tab">School</a></li>
-			<!-- <li role="presentation" class=""><a href="#student" aria-controls="student" role="tab" data-toggle="tab">Student</a></li> -->
-			<li role="presentation" class="active"><a href="#bulk" aria-controls="bulk" role="tab" data-toggle="tab">Bulk print</a></li>
+			<li role="presentation" class=""><a href="#bulk" aria-controls="bulk" role="tab" data-toggle="tab">Bulk print</a></li>
 		</ul>
 		<!-- Tab panes -->
 		<div class="tab-content">
-			<div role="tabpanel" class="tab-pane" id="tournament">
+			<div role="tabpanel" class="tab-pane active" id="tournament">
 				<div class="results-container">
 				</div>
 			</div>
@@ -75,29 +74,7 @@
 				<div class="results-container">
 				</div>
 			</div>
-			<div role="tabpanel" class="tab-pane" id="student">
-				<div class="row selector-container hidden-print">
-					<label class="col-xs-3">
-						Division
-						<select id="student-division" class="form-control">
-						</select>
-					</label>
-					<label class="col-xs-5">
-						School
-						<select id="student-school" class="form-control">
-						</select>
-					</label>
-					<label class="col-xs-4">
-						Student
-						<select id="student-student" class="form-control">
-						</select>
-					</label>
-				</div>
-				<hr>
-				<div class="results-container">
-				</div>
-			</div>
-			<div role="tabpanel" class="tab-pane active" id="bulk">
+			<div role="tabpanel" class="tab-pane" id="bulk">
 				<div class="row buttons-container hidden-print">
 					<button class="col-xs-3 col-xs-offset-1 btn btn-primary print-schools">Print schools</button>
 					<button class="col-xs-3 col-xs-offset-1 btn btn-primary print-divisions">Print divisions</button>

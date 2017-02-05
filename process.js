@@ -410,6 +410,9 @@ function tournamentReport(allData, container) {
 	Compile Division report
 */
 function divisionReport(allData, divisionObj, container) {
+	if(!divisionObj) {
+		return;
+	}
 	container
 	.append(
 		$('<div>')
@@ -541,7 +544,9 @@ function divisionReport(allData, divisionObj, container) {
 	Compile school report
 */
 function schoolReport(allData, schoolObj, container) {
-	//-- Markup preparation
+	if(!schoolObj)	{
+		return;
+	}
 	container
 	.append(
 		$('<div>')
@@ -812,6 +817,9 @@ $(document).ready(function() {
 	$('#school-division')
 	.change(function(){
 		let division = $('#school-division').find('option:selected').val();
+		if(!division) {
+			return false;
+		}
 		let schools = Object.keys(evaluatedData.divisions[division].schools).sort();
 		$('#school-school').empty();
 		schools.forEach(function(school){
@@ -830,70 +838,6 @@ $(document).ready(function() {
 			let division = $('#school-division').find('option:selected').val();
 			let schoolObj = evaluatedData.divisions[division].schools[schoolName];
 			schoolReport(evaluatedData, schoolObj, $('#school .results-container').empty());
-		})
-		.find('option:eq(0)')
-		.attr('selected','')
-		.end()
-		.trigger('change');
-	})
-	.find('option:eq(0)')
-	.attr('selected','')
-	.end()
-	.trigger('change');
-	//-- Student tab
-	divisions.forEach(function(division){
-		$('#student-division')
-		.append(
-			$('<option>')
-			.attr({
-				'value': division
-			})
-			.text(division)
-		);
-	});
-	$('#student-division')
-	.change(function(){
-		let division = $('#student-division').find('option:selected').val();
-		let schools = Object.keys(evaluatedData.divisions[division].schools).sort();
-		$('#student-school').empty();
-		schools.forEach(function(school){
-			$('#student-school')
-			.append(
-				$('<option>')
-				.attr({
-					'value': school
-				})
-				.text(school)
-			);
-		});
-		$('#student-school')
-		.change(function(){
-			let division = $('#student-division').find('option:selected').val();
-			let school = $('#student-school').find('option:selected').val();
-			let students = Object.keys(evaluatedData.divisions[division].schools[school].students).sort();
-			$('#student-student').empty();
-			students.forEach(function(student){
-				$('#student-student')
-				.append(
-					$('<option>')
-					.attr({
-						'value': student
-					})
-					.text(student)
-				);
-			});
-			$('#student-student')
-			.change(function(){
-				let division = $('#student-division').find('option:selected').val();
-				let school = $('#student-school').find('option:selected').val();
-				let student = $('#student-student').find('option:selected').val();
-				let studentObj = evaluatedData.divisions[division].schools[school].students[student];
-				studentReport(evaluatedData, studentObj, $('#student .results-container'));
-			})
-			.find('option:eq(0)')
-			.attr('selected','')
-			.end()
-			.trigger('change');
 		})
 		.find('option:eq(0)')
 		.attr('selected','')
