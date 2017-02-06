@@ -54,7 +54,7 @@ mtData = {
 	},
 	teams: [
 		{
-			division: "GISA AA",
+			division: "GHSA A",
 			schools: [
 				{
 					name: "Turner County High School",
@@ -195,7 +195,7 @@ mtData = {
 			]
 		},
 		{
-			division: "GISA AAA",
+			division: "GHSA AA",
 			schools: [
 				{
 					name: "Fitzgerald High School",
@@ -242,7 +242,7 @@ mtData = {
 			]
 		},
 		{
-			division: "GHSA A",
+			division: "GHSA AAA",
 			schools: [
 				{
 					name: "Southeast Bulloch High School",
@@ -355,7 +355,7 @@ mtData = {
 			]
 		},
 		{
-			division: "GHSA AA",
+			division: "GHSA AAAA",
 			schools: [
 				{
 					name: "Bainbridge High School",
@@ -587,7 +587,7 @@ mtData = {
 			]
 		},
 		{
-			division: "GHSA AAA",
+			division: "GHSA AAAAA",
 			schools: [
 				{
 					name: "Columbus High School",
@@ -646,7 +646,7 @@ mtData = {
 			]
 		},
 		{
-			division: "GHSA AAAA",
+			division: "GHSA AAAAAA",
 			schools: [
 				{
 					name: "Valdosta High School",
@@ -714,7 +714,7 @@ mtData = {
 			]
 		},
 		{
-			division: "GHSA AAAAA",
+			division: "GISA AA",
 			schools: [
 				{
 					name: "Georgia Christian School",
@@ -807,7 +807,7 @@ mtData = {
 			]
 		},
 		{
-			division: "GHSA AAAAAA",
+			division: "GISA AAA",
 			schools: [
 				{
 					name: "Deerfield Windsor School",
