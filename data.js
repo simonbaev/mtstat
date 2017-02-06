@@ -52,8 +52,8 @@ mtData = {
 			40: 3,
 		}
 	},
-	teams: [
-		{
+	teams: {
+		0: {
 			division: "GHSA A",
 			schools: [
 				{
@@ -194,7 +194,7 @@ mtData = {
 				},
 			]
 		},
-		{
+		1: {
 			division: "GHSA AA",
 			schools: [
 				{
@@ -241,7 +241,7 @@ mtData = {
 				},
 			]
 		},
-		{
+		2: {
 			division: "GHSA AAA",
 			schools: [
 				{
@@ -354,7 +354,7 @@ mtData = {
 				},
 			]
 		},
-		{
+		3: {
 			division: "GHSA AAAA",
 			schools: [
 				{
@@ -586,7 +586,7 @@ mtData = {
 				},
 			]
 		},
-		{
+		4: {
 			division: "GHSA AAAAA",
 			schools: [
 				{
@@ -645,7 +645,7 @@ mtData = {
 				},
 			]
 		},
-		{
+		5: {
 			division: "GHSA AAAAAA",
 			schools: [
 				{
@@ -713,7 +713,7 @@ mtData = {
 				},
 			]
 		},
-		{
+		6: {
 			division: "GISA AA",
 			schools: [
 				{
@@ -806,7 +806,7 @@ mtData = {
 				},
 			]
 		},
-		{
+		7: {
 			division: "GISA AAA",
 			schools: [
 				{
@@ -884,7 +884,7 @@ mtData = {
 				},
 			]
 		},
-	],
+	},
 	scanData: [
 		"1104444410003434413421512410135000044412554000000",
 		"1115410401002050413320002104000025222002354300000",
