@@ -15,8 +15,8 @@ function getIDs() {
 		}
 		return "" + number;
 	};
-	for (divisionIndex = 0; divisionIndex < mtData.teams.length; divisionIndex++) {
-		var division = mtData.teams[divisionIndex];
+	for (divisionIndex = 0; divisionIndex < Object.keys(mtData.teams).length; divisionIndex++) {
+		var division = mtData.teams[Object.keys(mtData.teams)[divisionIndex]];
 		for (schoolIndex = 0; schoolIndex < division.schools.length; schoolIndex++) {
 			var school = division.schools[schoolIndex];
 			for (studentIndex = 0; studentIndex < school.students.length; studentIndex++) {
