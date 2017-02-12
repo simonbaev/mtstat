@@ -1,0 +1,523 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"division",
+				"divisionObj"
+			],
+			[
+				"top",
+				"top4total"
+			],
+			[
+				"stud",
+				"studentObj"
+			],
+			[
+				"school",
+				"schoolObj"
+			],
+			[
+				"avera",
+				"averageScore"
+			],
+			[
+				"stat",
+				"statTournament"
+			],
+			[
+				"flex",
+				"flex-grow"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"to",
+				"top4total"
+			],
+			[
+				"cate",
+				"categories"
+			],
+			[
+				"top4",
+				"top4score"
+			],
+			[
+				"divi",
+				"divisions"
+			],
+			[
+				"student",
+				"studentIndex"
+			],
+			[
+				"divisio",
+				"divisionIndex"
+			],
+			[
+				"parseI",
+				"parseID"
+			],
+			[
+				"result",
+				"resultTemplate"
+			],
+			[
+				"resul",
+				"resultTemplate"
+			],
+			[
+				"id",
+				"idToString"
+			],
+			[
+				"que",
+				"questions"
+			],
+			[
+				"parse",
+				"parseQuestions"
+			],
+			[
+				"ques",
+				"questions"
+			],
+			[
+				"di",
+				"division"
+			],
+			[
+				"pa",
+				"parseID"
+			],
+			[
+				"v",
+				"vspace-30px\t encounters.css"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "common/process.js",
+			"settings":
+			{
+				"buffer_size": 21594,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 30.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"packinst",
+				"Package Control: Install Package"
+			],
+			[
+				"remopack",
+				"Package Control: Remove Package"
+			],
+			[
+				"packremo",
+				"Package Control: Remove Package"
+			],
+			[
+				"packainst",
+				"Package Control: Install Package"
+			],
+			[
+				"instpack",
+				"Package Control: Install Package"
+			],
+			[
+				"packremove",
+				"Package Control: Remove Channel"
+			],
+			[
+				"gits",
+				"git: status"
+			],
+			[
+				"gitstat",
+				"git: status"
+			],
+			[
+				"reinde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"gitpu",
+				"git: pull"
+			],
+			[
+				"removepack",
+				"Package Control: Remove Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"rempack",
+				"Package Control: Remove Package"
+			],
+			[
+				"removpack",
+				"Package Control: Remove Package"
+			],
+			[
+				"packrem",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 268.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/gswcm/Projects/MT",
+		"/Users/gswcm/Projects/MT/2016",
+		"/Users/gswcm/Projects/MT/common"
+	],
+	"file_history":
+	[
+		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/gswcm/Downloads/1310/Assignment2_3.java",
+		"/Users/gswcm/Downloads/1310/Hihunter.java",
+		"/Users/gswcm/Downloads/1310/Assignment22.java",
+		"/Users/gswcm/Downloads/1310/Assignment23.java",
+		"/Users/gswcm/Downloads/1310/Assignment24.java",
+		"/Users/gswcm/Downloads/1310/Assignment25.java",
+		"/Users/gswcm/Projects/MT/2017/index.html",
+		"/Users/gswcm/Projects/MT/index.html",
+		"/Users/gswcm/Projects/MT/2016/index.html",
+		"/Users/gswcm/Projects/MT/process.js",
+		"/Users/gswcm/Projects/MT/data.js",
+		"/Users/gswcm/Projects/MT/data01.txt",
+		"/Users/gswcm/Projects/MT/data02.txt",
+		"/Users/gswcm/Projects/MT/data_mt16.js",
+		"/Users/gswcm/Projects/Chrome/Umbrella/assets/js/ui.js",
+		"/Users/gswcm/Projects/MT/style.css",
+		"/Users/gswcm/Projects/MT/results.txt",
+		"/Users/gswcm/Projects/Node.js/cem/public/css/main/encounter.css",
+		"/Users/gswcm/Projects/Node.js/cem/public/css/style.css",
+		"/Users/gswcm/Projects/MT/results.js",
+		"/Users/gswcm/Downloads/1310/Assignment1_3.java",
+		"/Users/gswcm/Projects/Node.js/cem/public/js/main/encounter.js",
+		"/Users/gswcm/Projects/Node.js/cem/lib/models/encounter.js",
+		"/Users/gswcm/Projects/Node.js/cem/routes/process.js",
+		"/Users/gswcm/Projects/Node.js/cem/routes/encounter.js",
+		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/Users/gswcm/Downloads/HMT/data01.txt",
+		"/Users/gswcm/Downloads/HMT/data02.txt",
+		"/Users/gswcm/Downloads/HMT/data03.txt",
+		"/Users/gswcm/Downloads/HMT/results.txt",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/rain.sh",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/201608.csv",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/201605.csv.raw",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/201605.csv",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/201702.csv.raw",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/201702.csv",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/SP17.csv",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/201608.csv.raw",
+		"/Users/gswcm/Projects/GSW/Non-Teaching/GSWCM.NET/RAIN2AD/a",
+		"/Users/gswcm/Projects/GSW/CSCI6220/SP17/Syllabus & Orientation/CSCI6220_Orientation.tex",
+		"/Users/gswcm/Projects/GSW/CSCI4210/SP17/Syllabus/CSCI4210.tex",
+		"/Users/gswcm/Projects/GSW/CSCI3200/SP17/Syllabus/CSCI3200.tex",
+		"/Users/gswcm/Projects/GSW/CSCI4940/SP17/Syllabus/CSCI4940.tex",
+		"/Users/gswcm/Projects/Node.js/cem/configs/nginx-default",
+		"/Users/gswcm/Downloads/Archive/ClassSchedule/classList.aspx.cs",
+		"/Users/gswcm/Downloads/Archive/ClassSchedule/classList.aspx",
+		"/Users/gswcm/Projects/Node.js/cem/public/css/main/encounters.css",
+		"/Users/gswcm/Projects/Node.js/cem/routes/encounters.js",
+		"/Users/gswcm/Projects/Node.js/cem/views/main/encounters.ejs",
+		"/Users/gswcm/Projects/Node.js/cem/views/main/encounter.ejs",
+		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/User/Side Bar Folders.sublime-settings"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"temp",
+			"student",
+			"parseID",
+			"#bulk",
+			"divisionReport",
+			"default",
+			"schoolReport",
+			"school",
+			"text",
+			"school",
+			"schoolIndex",
+			"span-col",
+			"\t\t.appen",
+			"Daniel Shu",
+			"div",
+			"ranking",
+			"averages",
+			"top4score",
+			"entry",
+			"questionsCollection",
+			"4127",
+			"aultm",
+			"questions",
+			"result",
+			"regData",
+			"30",
+			"mainTeam",
+			"ALT",
+			"913",
+			"stils",
+			"913",
+			"Hughes",
+			"avont",
+			"913",
+			"SP16",
+			"encountersByUsername"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"mtData",
+			"SP17"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "common/process.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 21594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": "<",
+									"selector": "text.html"
+								},
+								{
+									"characters": ".#",
+									"selector": "text.html"
+								}
+							],
+							"color_helper.box_height": 17,
+							"color_helper.color_scheme": "Packages/User/SublimeLinter/Agila Dracula (SL).tmTheme",
+							"color_helper.file_palette":
+							[
+							],
+							"color_helper.preview_meta":
+							{
+							},
+							"color_helper.scan":
+							{
+								"current_ext": ".js",
+								"current_syntax": "JavaScriptNext - ES6 Syntax/JavaScriptNext",
+								"enabled": false,
+								"last_updated": 1486922787.07
+							},
+							"git_savvy.file_path": "/Users/gswcm/Projects/MT/common/process.js",
+							"git_savvy.repo_path": "/Users/gswcm/Projects/MT",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.CSS Extended Completions":
+	{
+		"height": 0.0
+	},
+	"output.GitSavvy":
+	{
+		"height": 130.0
+	},
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "mt.sublime-project",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"Package Control Messages"
+			],
+			[
+				"encounter",
+				"lib/models/encounter.js"
+			],
+			[
+				"encounter.js",
+				"public/js/main/encounter.js"
+			],
+			[
+				"encouejs",
+				"views/main/encounter.ejs"
+			],
+			[
+				"encouncss",
+				"public/css/main/encounters.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 235.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
