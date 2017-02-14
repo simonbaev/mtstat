@@ -243,6 +243,31 @@ mtData = {
 					],
 					isMain: false
 				},
+				{
+					name: "St. Anne-Pacelli Catholic School",
+					students: [
+						"Matt Oliver",
+						"Nicky Sun",
+						"Maria Schuler",
+						"Raphael Soon",
+						"Justin Bates",
+						"Joseph Land",
+						"Matthew Dawahare",
+						"Ben Brewster",
+					],
+					isMain: true
+				},
+				{
+					name: "St. Anne-Pacelli Catholic School ALT",
+					students: [
+						"George Gottfried",
+						"Daniel Mansfield",
+						"Eric Mendez",
+						"Justus Armstrong",
+					],
+					isMain: false
+				},
+
 			]
 		},
 		1: {
