@@ -103,14 +103,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "common/process.js",
-			"settings":
-			{
-				"buffer_size": 21594,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -119,10 +111,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 30.0,
-		"last_filter": "",
+		"height": 384.0,
+		"last_filter": "gitstat",
 		"selected_items":
 		[
+			[
+				"gitstat",
+				"git: status"
+			],
 			[
 				"packinst",
 				"Package Control: Install Package"
@@ -149,10 +145,6 @@
 			],
 			[
 				"gits",
-				"git: status"
-			],
-			[
-				"gitstat",
 				"git: status"
 			],
 			[
@@ -192,7 +184,7 @@
 				"Package Control: Remove Package"
 			]
 		],
-		"width": 485.0
+		"width": 493.0
 	},
 	"console":
 	{
@@ -214,11 +206,12 @@
 	"expanded_folders":
 	[
 		"/Users/gswcm/Projects/MT",
-		"/Users/gswcm/Projects/MT/2016",
 		"/Users/gswcm/Projects/MT/common"
 	],
 	"file_history":
 	[
+		"/Users/gswcm/Projects/MT/common/style.css",
+		"/Users/gswcm/Projects/MT/common/process.js",
 		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/gswcm/Downloads/1310/Assignment2_3.java",
@@ -344,65 +337,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "common/process.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 21594,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete_triggers":
-							[
-								{
-									"characters": "<",
-									"selector": "text.html"
-								},
-								{
-									"characters": ".#",
-									"selector": "text.html"
-								}
-							],
-							"color_helper.box_height": 17,
-							"color_helper.color_scheme": "Packages/User/SublimeLinter/Agila Dracula (SL).tmTheme",
-							"color_helper.file_palette":
-							[
-							],
-							"color_helper.preview_meta":
-							{
-							},
-							"color_helper.scan":
-							{
-								"current_ext": ".js",
-								"current_syntax": "JavaScriptNext - ES6 Syntax/JavaScriptNext",
-								"enabled": false,
-								"last_updated": 1486922787.07
-							},
-							"git_savvy.file_path": "/Users/gswcm/Projects/MT/common/process.js",
-							"git_savvy.repo_path": "/Users/gswcm/Projects/MT",
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

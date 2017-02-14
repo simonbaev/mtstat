@@ -23,6 +23,11 @@ hr {
 	padding: 25px;
 	padding-bottom: 0;
 }
+
+.nav-tabs li:last-child {
+	float: right;
+}
+
 #student .student-info,
 #school .school-info,
 #division .division-info,
@@ -32,7 +37,8 @@ hr {
 }
 #school table,
 #division table,
-#tournament table {
+#tournament table,
+#log table {
 	margin-left: 25px;
 }
 #school table thead tr th,
@@ -65,6 +71,19 @@ hr {
 #bulk .buttons-container {
 	padding: 25px;
 }
+#log .container {
+	padding: 25px;
+}
+#log table thead th:nth-child(0n+1) {
+	width: 5%;
+}
+#log table thead th:nth-child(0n+2) {
+	width: 30%;
+}
+#log table thead th:nth-child(0n+4) {
+	width: 20%;
+}
+
 
 @media print {
 	body > .container {

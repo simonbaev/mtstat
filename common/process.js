@@ -84,7 +84,7 @@ function getQAs() {
 /*
 	Evaluate scantron data
 */
-function evalAnswers() {
+function evalAnswers(IDs) {
 	let QAs = getQAs();
 	let countersTemplate = {
 		correct: {
@@ -98,8 +98,13 @@ function evalAnswers() {
 	}
 	results = {
 		divisions: {},
-		stats: {}
+		stats: {
+			IDs: {}
+		},
 	};
+	for(let ID of IDs) {
+		results.stats.IDs[ID] = 0;
+	}
 	//-- Work through all scantron sheets to populate results object
 	for(let line of mtData.scanData) {
 		let id = line.substring(0,4);
@@ -107,6 +112,7 @@ function evalAnswers() {
 		if(!student) {
 			continue;
 		}
+		results.stats.IDs[id]++;
 		let answers = line.substring(4).split("");
 		let counters = JSON.parse(JSON.stringify(countersTemplate));
 		for(let QA of QAs) {
@@ -766,14 +772,98 @@ function studentReport(allData, studentObj, container) {
 	);
 }
 /*
+	Compile log report
+*/
+function logReport(allData, container) {
+	container
+	.append(
+		$('<fieldset>')
+		.hide()
+		.append(
+			$('<legend>')
+			.text('Duplicated IDs in scantron data:')
+		)
+		.append(
+			$('<table>')
+			.addClass('table duplicates')
+			.append(
+				$('<thead>')
+				.append(
+					$('<tr>')
+					.append($('<th>').text('ID'))
+					.append($('<th>').text('Name'))
+					.append($('<th>').text('School'))
+					.append($('<th>').text('Division'))
+				)
+			)
+			.append(
+				$('<tbody>')
+			)
+		)
+	)
+	.append(
+		$('<fieldset>')
+		.hide()
+		.append(
+			$('<legend>')
+			.text('No-show records:')
+		)
+		.append(
+			$('<table>')
+			.addClass('table no-show')
+			.append(
+				$('<thead>')
+				.append(
+					$('<tr>')
+					.append($('<th>').text('ID'))
+					.append($('<th>').text('Name'))
+					.append($('<th>').text('School'))
+					.append($('<th>').text('Division'))
+				)
+			)
+			.append(
+				$('<tbody>')
+			)
+		)
+	);
+	for(let ID of Object.keys(allData.stats.IDs)) {
+		let target = null;
+		if(allData.stats.IDs[ID] === 0) {
+			target = $('table.no-show');
+		}
+		else if(allData.stats.IDs[ID] > 1) {
+			target = $('table.duplicates');
+		}
+		let student = parseID(ID);
+		if(target) {
+			target
+			.parents('fieldset')
+			.show()
+			.find('tbody')
+			.append(
+				$('<tr>')
+				.append($('<td>').text(ID))
+				.append($('<td>').text(student.name))
+				.append($('<td>').text(student.school))
+				.append($('<td>').text(student.division))
+			);
+		}
+	}
+}
+/*
 	Document ready function
 */
 $(document).ready(function() {
+	//-- Use YEAR from mtData object (defined in data.js)
+	var year = mtData.date.split(/\//)[2];
+	document.title = "GSW Math Tournament " + year;
+	$('.title > h3 > span').text(year);
+	//-- Process date from mtData object
 	var IDs = getIDs();
 	var labels = IDs.map(function(id) {
 		return idToString(id);
 	});
-	var evaluatedData = evalAnswers();
+	var evaluatedData = evalAnswers(IDs);
 	console.log(evaluatedData);
 	//-- Commons
 	$('button.print').click(function(){
@@ -782,6 +872,8 @@ $(document).ready(function() {
 	let divisions = Object.keys(evaluatedData.divisions).sort();
 	//-- Tournament report
 	tournamentReport(evaluatedData, $('#tournament .results-container'));
+	//-- Log tab
+	logReport(evaluatedData, $('#log .container').empty());
 	//-- Division tab
 	divisions.forEach(function(division){
 		$('#division-division')

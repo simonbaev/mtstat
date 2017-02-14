@@ -643,7 +643,7 @@ mtData = {
 					isMain: true
 				},
 				{
-					name: "Flint River Academy ALT",
+					name: "Brandon Hall School",
 					students: [
 						"Junyu Zhang",
 						"Shunyang Liu",
