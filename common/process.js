@@ -778,14 +778,16 @@ function logReport(allData, container) {
 	container
 	.append(
 		$('<fieldset>')
+		.addClass('duplicates')
 		.hide()
 		.append(
 			$('<legend>')
-			.text('Duplicated IDs in scantron data:')
+			.text('Duplicated IDs in scantron data ')
+			.append($('<span>'))
 		)
 		.append(
 			$('<table>')
-			.addClass('table duplicates')
+			.addClass('table')
 			.append(
 				$('<thead>')
 				.append(
@@ -803,14 +805,16 @@ function logReport(allData, container) {
 	)
 	.append(
 		$('<fieldset>')
+		.addClass('no-show')
 		.hide()
 		.append(
 			$('<legend>')
-			.text('No-show records:')
+			.text('No-show records ')
+			.append($('<span>'))
 		)
 		.append(
 			$('<table>')
-			.addClass('table no-show')
+			.addClass('table')
 			.append(
 				$('<thead>')
 				.append(
@@ -826,20 +830,20 @@ function logReport(allData, container) {
 			)
 		)
 	);
+	let cntNoShow = 0, cntDuplicates = 0;
 	for(let ID of Object.keys(allData.stats.IDs)) {
 		let target = null;
 		if(allData.stats.IDs[ID] === 0) {
-			target = $('table.no-show');
+			target = $('.no-show table tbody');
+			cntNoShow++;
 		}
 		else if(allData.stats.IDs[ID] > 1) {
-			target = $('table.duplicates');
+			target = $('.duplicates table tbody');
+			cntDuplicates++;
 		}
 		let student = parseID(ID);
 		if(target) {
 			target
-			.parents('fieldset')
-			.show()
-			.find('tbody')
 			.append(
 				$('<tr>')
 				.append($('<td>').text(ID))
@@ -848,6 +852,12 @@ function logReport(allData, container) {
 				.append($('<td>').text(student.division))
 			);
 		}
+	}
+	if(cntNoShow > 0) {
+		$('.no-show').show().find('legend span').text('(' + cntNoShow + ')');
+	}
+	if(cntDuplicates > 0) {
+		$('.duplicates').show().find('legend span').text('(' + cntDuplicates + ')');
 	}
 }
 /*
