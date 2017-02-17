@@ -1,0 +1,136 @@
+<html>
+	<head>
+		<title>GSW Math Tournament</title>
+		<Script src="data.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="process.js"></script>
+		<style>
+			td.correctAnswer {
+				color: blue;
+			}
+		</style>
+	</head>
+	<body style="width: 80vw; margin: 0 auto;">
+		<div class="container-fluid">
+			<div class="row">
+				<h1 class="hidden-print"> Results </h1>
+			</div>
+			<div class="row">
+				<ul id="controlTabs" class="nav nav-tabs hidden-print">
+					<li class="active"><a data-toggle="tab" href="#tournamentTab">Tournament</a></li>
+					<li><a data-toggle="tab" href="#divisionTab">Division</a></li>
+					<li><a data-toggle="tab" href="#schoolTab">School</a></li>
+					<li><a data-toggle="tab" href="#bulkTab">Bulk</a></li>
+					<li><a data-toggle="tab" href="#errorTab">Error</a></li>
+				</ul>
+
+				<div class="tab-content">
+					<div id="tournamentTab" class="tab-pane active">
+						<div class="row">
+							<center>
+								<h3>Results by Tournament</h3>
+								<label>
+									<span>&nbsp;</span>
+									<button type="button" onclick="window.print()" class="btn btn-default form-control print hidden-print">
+										<span class="glyphicon glyphicon-print"></span>
+									</button>
+								</label>
+							</center>
+						</div>
+						<div id="tourneyContainer">
+						</div>
+					</div>
+					<div id="divisionTab" class="tab-pane">
+						<center>
+							<h3>Results by Division</h3>
+						</center>
+						<div class="row selector-container hidden-print">
+							<label class="col-xs-10">
+								Division
+								<select id="division-division" class="form-control">
+								</select>
+							</label>
+							<div class="col-xs-2">
+								<label>
+									<span>&nbsp;</span>
+									<button type="button" onclick="window.print()" class="btn btn-default form-control print hidden-print">
+										<span class="glyphicon glyphicon-print"></span>
+									</button>
+								</label>
+							</div>
+						</div>
+						<div id="divisionContainer">
+						</div>
+					</div>
+					<div id="schoolTab" class="tab-pane">
+						<center>
+							<h3>Results by School</h3>
+						</center>
+						<div class="row selector-container hidden-print">
+							<label class="col-xs-5">
+								Division
+								<select id="school-division" class="form-control">
+								</select>
+							</label>
+							<label class="col-xs-5">
+								School
+								<select id="school-school" class="form-control">
+								</select>
+							</label>
+							<div class="col-xs-2">
+								<label>
+									<span>&nbsp;</span>
+									<button type="button" onclick="window.print()" class="btn btn-default form-control print hidden-print">
+										<span class="glyphicon glyphicon-print"></span>
+									</button>
+								</label>
+							</div>
+						</div>
+						<div id="schoolContainer">
+						</div>
+					</div>
+					<div id="bulkTab" class="tab-pane">
+						<div class="row selector-container hidden-print">
+							<div class="col-xs-4">
+								<label>
+									<span>&nbsp;</span>
+									<button type="button" onclick="bulkDivision()" class="btn btn-default form-control hidden-print">
+										Print Divisions
+									</button>
+								</label>
+							</div>
+							<div class="col-xs-4">
+								<label>
+									<span>&nbsp;</span>
+									<button type="button" onclick="bulkSchool()" class="btn btn-default form-control hidden-print">
+										Print Schools
+									</button>
+								</label>
+							</div>
+							<div class="col-xs-4">
+								<label>
+									<span>&nbsp;</span>
+									<a id="downloadButton" href="#" role="button" type="button" onclick="bulkParticipating()" class="btn btn-default form-control hidden-print">
+										Download Labels (CSV)
+									</a>
+								</label>
+							</div>
+						</div>
+						<div id="bulkSchoolContainer" class="visible-print-block">
+						</div>
+						<div id="bulkDivisionContainer" class="visible-print-block">
+						</div>
+					</div>
+					<div id="errorTab" class="tab-pane">
+						<div id="errorContainer">
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</body>
+</html>

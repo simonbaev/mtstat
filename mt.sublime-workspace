@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cnt",
+				"cntNoShow"
+			],
+			[
 				"division",
 				"divisionObj"
 			],
@@ -203,14 +207,13 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/Users/gswcm/Projects/MT"
-	],
 	"file_history":
 	[
+		"/Users/gswcm/Downloads/openvpn/US Florida.ovpn",
+		"/Users/gswcm/Downloads/openvpn/Finland.ovpn",
 		"/Users/gswcm/Projects/MT/common/style.css",
 		"/Users/gswcm/Projects/MT/common/process.js",
+		"/Users/gswcm/Projects/MT/2016/data.js",
 		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/Users/gswcm/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/Users/gswcm/Downloads/1310/Assignment2_3.java",
@@ -401,6 +404,14 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"data",
+				"2016/data.js"
+			],
+			[
+				"sty",
+				"common/style.css"
+			],
 			[
 				"",
 				"Package Control Messages"
